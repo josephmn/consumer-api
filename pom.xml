@@ -106,17 +106,18 @@
 				<artifactId>openapi-generator-maven-plugin</artifactId>
 				<version>7.9.0</version>
 				<executions>
+					<!--openapi/CustomerApi.yaml -->
 					<execution>
-						<id>generate</id>
+						<id>generate-customer-api</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/openapi/CustomerApi.yaml</inputSpec>
 							<generatorName>spring</generatorName>
-							<output>${project.build.directory}/generated-sources</output>
-							<apiPackage>com.open.api</apiPackage>
-							<modelPackage>com.open.model</modelPackage>
+							<output>${project.build.directory}/generated-sources/customer</output>
+							<apiPackage>com.open.customer.api</apiPackage>
+							<modelPackage>com.open.customer.model</modelPackage>
 							<configOptions>
 								<reactive>true</reactive>
 								<openApiNullable>true</openApiNullable>
@@ -124,8 +125,52 @@
 								<useSwaggerUI>true</useSwaggerUI>
 								<useTags>true</useTags>
 								<interfaceOnly>true</interfaceOnly>
-								<sourceFolder>generated-sources</sourceFolder>
+								<!--<sourceFolder>generated-sources</sourceFolder>-->
 							</configOptions>
+						</configuration>
+					</execution>
+					<!--openapi/PersonApi.yaml -->
+					<execution>
+						<id>generate-person-api</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>${project.basedir}/src/main/resources/openapi/PersonApi.yaml</inputSpec>
+							<generatorName>spring</generatorName>
+							<output>${project.build.directory}/generated-sources/person</output>
+							<apiPackage>com.open.person.api</apiPackage>
+							<modelPackage>com.open.person.model</modelPackage>
+							<configOptions>
+								<reactive>true</reactive>
+								<openApiNullable>true</openApiNullable>
+								<useSpringBoot3>true</useSpringBoot3>
+								<useSwaggerUI>true</useSwaggerUI>
+								<useTags>true</useTags>
+								<interfaceOnly>true</interfaceOnly>
+								<!--<sourceFolder>generated-sources</sourceFolder>-->
+							</configOptions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--Agrega esto para que los sources generados se compilen -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/customer/src/main/java</source>
+								<source>${project.build.directory}/generated-sources/person/src/main/java</source>
+							</sources>
 						</configuration>
 					</execution>
 				</executions>

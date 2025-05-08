@@ -1,8 +1,8 @@
 package com.company.consumerapi.expose.web;
 
 import com.company.consumerapi.service.CustomerService;
-import com.open.api.CustomerApi;
-import com.open.model.CustomerResponse;
+import com.open.customer.api.CustomerApi;
+import com.open.customer.model.CustomerResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

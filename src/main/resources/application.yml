@@ -8,3 +8,5 @@ spring:
 app:
   customer:
     url: "http://localhost:8081/api/v1"
+  person:
+    url: "http://localhost:8083"
