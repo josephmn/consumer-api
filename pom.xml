@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<base.package>com.company.consumerapi</base.package>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -115,9 +116,9 @@
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/openapi/CustomerApi.yaml</inputSpec>
 							<generatorName>spring</generatorName>
-							<output>${project.build.directory}/generated-sources/customer</output>
-							<apiPackage>com.open.customer.api</apiPackage>
-							<modelPackage>com.open.customer.model</modelPackage>
+							<output>${project.build.directory}/generated-sources</output>
+							<apiPackage>${base.package}.api.customer</apiPackage>
+							<modelPackage>${base.package}.model.customer</modelPackage>
 							<configOptions>
 								<reactive>true</reactive>
 								<openApiNullable>true</openApiNullable>
@@ -138,9 +139,9 @@
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/openapi/PersonApi.yaml</inputSpec>
 							<generatorName>spring</generatorName>
-							<output>${project.build.directory}/generated-sources/person</output>
-							<apiPackage>com.open.person.api</apiPackage>
-							<modelPackage>com.open.person.model</modelPackage>
+							<output>${project.build.directory}/generated-sources</output>
+							<apiPackage>${base.package}.api.person</apiPackage>
+							<modelPackage>${base.package}.model.person</modelPackage>
 							<configOptions>
 								<reactive>true</reactive>
 								<openApiNullable>true</openApiNullable>
@@ -168,8 +169,7 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>${project.build.directory}/generated-sources/customer/src/main/java</source>
-								<source>${project.build.directory}/generated-sources/person/src/main/java</source>
+								<source>${project.build.directory}/generated-sources/src/main/java</source>
 							</sources>
 						</configuration>
 					</execution>

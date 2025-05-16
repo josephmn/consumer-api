@@ -1,6 +1,6 @@
 package com.company.consumerapi.service;
 
-import com.open.person.model.PersonDTO;
+import com.company.consumerapi.model.person.PersonDTO;
 import reactor.core.publisher.Mono;
 
 public interface PersonService {

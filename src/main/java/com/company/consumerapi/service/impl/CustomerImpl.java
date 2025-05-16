@@ -1,7 +1,8 @@
 package com.company.consumerapi.service.impl;
 
+import com.company.consumerapi.model.customer.CustomerResponse;
 import com.company.consumerapi.service.CustomerService;
-import com.open.customer.model.CustomerResponse;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

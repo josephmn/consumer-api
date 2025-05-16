@@ -1,6 +1,6 @@
 package com.company.consumerapi.service;
 
-import com.open.customer.model.CustomerResponse;
+import com.company.consumerapi.model.customer.CustomerResponse;
 import reactor.core.publisher.Mono;
 
 public interface CustomerService {

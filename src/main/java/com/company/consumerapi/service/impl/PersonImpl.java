@@ -1,7 +1,8 @@
 package com.company.consumerapi.service.impl;
 
+import com.company.consumerapi.model.person.PersonDTO;
 import com.company.consumerapi.service.PersonService;
-import com.open.person.model.PersonDTO;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

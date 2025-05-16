@@ -1,8 +1,9 @@
 package com.company.consumerapi.expose.web;
 
+import com.company.consumerapi.api.person.PersonApi;
+import com.company.consumerapi.model.person.PersonDTO;
 import com.company.consumerapi.service.PersonService;
-import com.open.person.api.PersonApi;
-import com.open.person.model.PersonDTO;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
